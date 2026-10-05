@@ -1,0 +1,120 @@
+.card {
+  perspective: 1000px;
+}
+.inner {
+  transform-style: preserve-3d;
+  transition: transform .7s cubic-bezier(.3, 1.4, .5, 1);
+}
+.flipped .inner {
+  transform: rotateY(180deg);
+}body {
+  background-color: #0d1117;
+  color: #fff;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.checkout-container {
+  width: 350px;
+  text-align: center;
+}
+
+.card {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform .7s cubic-bezier(.3, 1.4, .5, 1);
+}
+
+.card.flipped .inner {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  padding: 20px;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #2b3595, #1f2348);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, #1f2348, #0d1117);
+}
+
+.card-chip {
+  width: 40px;
+  height: 30px;
+  background: linear-gradient(135deg, #ffe97d, #b99330);
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.card-number {
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.card-info small {
+  display: block;
+  opacity: 0.6;
+}
+
+.payment-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.pay-btn {
+  width: 100%;
+  padding: 12px;
+  background: #238636;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}/* الشكل العادي (الافتراضي) */
+.front {
+  background: linear-gradient(135deg, #2b3595, #1f2348);
+  transition: background 0.5s ease;
+}
+
+/* إلا كانت مثلاً بطاقة سياش (CIH) أو نوع آخر - كيتغير اللونو أوتوماتيك */
+.card[data-brand="cih"] .front {
+  background: linear-gradient(135deg, #005A9C, #002244); /* أزرق ديال CIH مثلاً */
+}
+
+/* إلا كانت ماستر كارد أو نوع ثاني */
+.card[data-brand="mc"] .front {
+  background: linear-gradient(135deg, #eb001b, #f79e1b); /* ألوان ماستر كارد */
+}

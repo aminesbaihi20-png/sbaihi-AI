@@ -1,0 +1,15 @@
+/* الشكل العادي (الافتراضي) */
+.front {
+  background: linear-gradient(135deg, #2b3595, #1f2348);
+  transition: background 0.5s ease;
+}
+
+/* إلا كانت مثلاً بطاقة سياش (CIH) أو نوع آخر - كيتغير اللونو أوتوماتيك */
+.card[data-brand="cih"] .front {
+  background: linear-gradient(135deg, #005A9C, #002244); /* أزرق ديال CIH مثلاً */
+}
+
+/* إلا كانت ماستر كارد أو نوع ثاني */
+.card[data-brand="mc"] .front {
+  background: linear-gradient(135deg, #eb001b, #f79e1b); /* ألوان ماستر كارد */
+}

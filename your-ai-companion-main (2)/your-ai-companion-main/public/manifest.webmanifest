@@ -1,0 +1,16 @@
+{
+  "name": "Sbaihi AI — Your Friendly Companion",
+  "short_name": "Sbaihi AI",
+  "description": "Explain any book or lesson, browse Moroccan universities, and chat with a friendly AI companion.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fbf9f4",
+  "theme_color": "#1b2447",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

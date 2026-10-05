@@ -1,0 +1,369 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition for Sbaihi AI.
+ *
+ * Warm, friendly identity: golden primary, dark navy sidebar, soft warm background.
+ * All colors use oklch format.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Sbaihi AI custom tokens */
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-navy: var(--navy);
+  --color-navy-foreground: var(--navy-foreground);
+  --color-navy-muted: var(--navy-muted);
+  --color-cream: var(--cream);
+  --color-cream-foreground: var(--cream-foreground);
+  --color-teal: var(--teal);
+  --color-teal-foreground: var(--teal-foreground);
+  --color-indigo: var(--indigo);
+  --color-indigo-foreground: var(--indigo-foreground);
+  --font-display: "Space Grotesk", sans-serif;
+  --font-sans: "DM Sans", sans-serif;
+}
+
+:root {
+  --radius: 1.125rem;
+
+  /* Warm light theme */
+  --background: oklch(0.92 0.018 250);
+  --foreground: oklch(0.25 0.035 252);
+  --card: oklch(0.92 0.018 250);
+  --card-foreground: oklch(0.25 0.035 252);
+  --popover: oklch(0.94 0.014 250);
+  --popover-foreground: oklch(0.25 0.035 252);
+
+  --primary: oklch(0.86 0.19 98);
+  --primary-foreground: oklch(0.23 0.035 252);
+  --secondary: oklch(0.86 0.025 250);
+  --secondary-foreground: oklch(0.3 0.035 252);
+  --muted: oklch(0.87 0.02 250);
+  --muted-foreground: oklch(0.5 0.035 252);
+  --accent: oklch(0.84 0.035 246);
+  --accent-foreground: oklch(0.23 0.035 252);
+
+  --destructive: oklch(0.58 0.22 25);
+  --destructive-foreground: oklch(0.98 0.005 85);
+  --border: oklch(0.85 0.025 250);
+  --input: oklch(0.84 0.025 250);
+  --ring: oklch(0.86 0.19 98);
+  --neo-light: oklch(0.98 0.008 250);
+  --neo-dark: oklch(0.76 0.035 250);
+  --neo-deep: oklch(0.29 0.045 252);
+
+  --chart-1: oklch(0.75 0.18 85);
+  --chart-2: oklch(0.55 0.12 200);
+  --chart-3: oklch(0.45 0.12 260);
+  --chart-4: oklch(0.65 0.15 140);
+  --chart-5: oklch(0.7 0.16 60);
+
+  /* Sidebar (dark navy) */
+  --sidebar: oklch(0.27 0.045 252);
+  --sidebar-foreground: oklch(0.92 0.02 260);
+  --sidebar-primary: oklch(0.75 0.18 85);
+  --sidebar-primary-foreground: oklch(0.25 0.05 85);
+  --sidebar-accent: oklch(0.38 0.05 260);
+  --sidebar-accent-foreground: oklch(0.98 0.005 85);
+  --sidebar-border: oklch(0.4 0.04 260);
+  --sidebar-ring: oklch(0.75 0.18 85);
+
+  /* Custom accent tokens */
+  --gold: oklch(0.86 0.19 98);
+  --gold-foreground: oklch(0.23 0.035 252);
+  --navy: oklch(0.27 0.045 252);
+  --navy-foreground: oklch(0.98 0.005 260);
+  --navy-muted: oklch(0.4 0.04 260);
+  --cream: oklch(0.98 0.005 85);
+  --cream-foreground: oklch(0.25 0.04 260);
+  --teal: oklch(0.65 0.12 190);
+  --teal-foreground: oklch(0.98 0.005 190);
+  --indigo: oklch(0.45 0.15 270);
+  --indigo-foreground: oklch(0.98 0.005 270);
+}
+
+.dark {
+  --background: oklch(0.18 0.03 260);
+  --foreground: oklch(0.95 0.02 260);
+  --card: oklch(0.22 0.04 260);
+  --card-foreground: oklch(0.95 0.02 260);
+  --popover: oklch(0.22 0.04 260);
+  --popover-foreground: oklch(0.95 0.02 260);
+
+  --primary: oklch(0.75 0.18 85);
+  --primary-foreground: oklch(0.25 0.05 85);
+  --secondary: oklch(0.28 0.04 260);
+  --secondary-foreground: oklch(0.95 0.02 260);
+  --muted: oklch(0.28 0.04 260);
+  --muted-foreground: oklch(0.7 0.03 260);
+  --accent: oklch(0.3 0.05 260);
+  --accent-foreground: oklch(0.95 0.02 260);
+
+  --destructive: oklch(0.62 0.22 25);
+  --destructive-foreground: oklch(0.98 0.005 85);
+  --border: oklch(0.3 0.04 260);
+  --input: oklch(0.3 0.04 260);
+  --ring: oklch(0.75 0.18 85);
+
+  --sidebar: oklch(0.15 0.03 260);
+  --sidebar-foreground: oklch(0.92 0.02 260);
+  --sidebar-primary: oklch(0.75 0.18 85);
+  --sidebar-primary-foreground: oklch(0.25 0.05 85);
+  --sidebar-accent: oklch(0.22 0.04 260);
+  --sidebar-accent-foreground: oklch(0.98 0.005 85);
+  --sidebar-border: oklch(0.25 0.04 260);
+  --sidebar-ring: oklch(0.75 0.18 85);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    overflow-x: hidden;
+    overscroll-behavior-y: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--font-sans);
+  }
+
+  /* Comfortable touch targets on mobile */
+  @media (max-width: 1023px) {
+    button,
+    a[role="button"],
+    select,
+    [type="button"],
+    [type="submit"] {
+      touch-action: manipulation;
+    }
+
+    input,
+    select,
+    textarea {
+      font-size: 16px; /* prevents iOS zoom-on-focus */
+    }
+  }
+}
+
+@utility font-display {
+  font-family: var(--font-display);
+}
+
+@utility neo-panel {
+  background: color-mix(in oklab, var(--card) 96%, transparent);
+  border: 1px solid color-mix(in oklab, var(--neo-light) 45%, transparent);
+  box-shadow:
+    16px 16px 32px color-mix(in oklab, var(--neo-dark) 58%, transparent),
+    -16px -16px 32px color-mix(in oklab, var(--neo-light) 82%, transparent);
+}
+
+@utility neo-raised {
+  background: var(--card);
+  border: 1px solid color-mix(in oklab, var(--neo-light) 38%, transparent);
+  box-shadow:
+    8px 8px 18px color-mix(in oklab, var(--neo-dark) 56%, transparent),
+    -8px -8px 18px color-mix(in oklab, var(--neo-light) 78%, transparent);
+}
+
+@utility neo-inset {
+  background: var(--background);
+  border: 1px solid color-mix(in oklab, var(--neo-light) 30%, transparent);
+  box-shadow:
+    inset 6px 6px 12px color-mix(in oklab, var(--neo-dark) 56%, transparent),
+    inset -6px -6px 12px color-mix(in oklab, var(--neo-light) 76%, transparent);
+}
+
+@utility neo-interactive {
+  transition:
+    box-shadow 220ms ease,
+    transform 220ms ease,
+    color 220ms ease;
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      10px 10px 22px color-mix(in oklab, var(--neo-dark) 60%, transparent),
+      -10px -10px 22px color-mix(in oklab, var(--neo-light) 82%, transparent);
+  }
+  &:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow:
+      inset 4px 4px 9px color-mix(in oklab, var(--neo-dark) 56%, transparent),
+      inset -4px -4px 9px color-mix(in oklab, var(--neo-light) 72%, transparent);
+  }
+}
+
+@utility neo-focus {
+  &:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+  }
+}
+
+@utility glass-surface {
+  background: color-mix(in oklab, var(--card) 78%, transparent);
+  backdrop-filter: blur(18px) saturate(125%);
+}
+
+@utility smooth-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--muted-foreground) transparent;
+  scroll-behavior: smooth;
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+/* Water ripple interaction feedback */
+@keyframes ripple-drop {
+  0% {
+    transform: scale(0.2);
+    opacity: 0.55;
+  }
+  45% {
+    opacity: 0.32;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.ripple-clip {
+  position: fixed;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.ripple-drop {
+  position: absolute;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle,
+    var(--ripple-color) 0%,
+    color-mix(in oklab, var(--ripple-color), transparent 45%) 55%,
+    transparent 72%
+  );
+  animation: ripple-drop 620ms cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+/* Lightbulb thinking pulse */
+@keyframes pulse-light {
+  0%,
+  100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 15px rgba(255, 235, 59, 0.8));
+  }
+  50% {
+    opacity: 0.3;
+    filter: drop-shadow(0 0 2px rgba(255, 235, 59, 0.2));
+  }
+}
+
+.thinking-bulb {
+  animation: pulse-light 1.5s infinite ease-in-out;
+}
+
+.bulb-glow {
+  filter: drop-shadow(0 0 10px color-mix(in oklab, var(--gold) 70%, transparent));
+  box-shadow:
+    0 0 18px color-mix(in oklab, var(--gold) 55%, transparent),
+    0 0 32px color-mix(in oklab, var(--gold) 25%, transparent);
+}
+
+/* Dark card and progress styles */
+.button-wrapper {
+  position: relative;
+  z-index: 10;
+  background-color: #0f172a;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+.progress-container {
+  background-color: #1e293b;
+  border-radius: 9999px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.progress-text {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.progress-bar-yellow {
+  background-color: #facc15;
+  height: 6px;
+  border-radius: 9999px;
+  transition: width 0.4s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ripple-clip {
+    display: none;
+  }
+
+  .thinking-bulb {
+    animation: none;
+  }
+}
